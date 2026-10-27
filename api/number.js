@@ -37,7 +37,7 @@ export default async function handler(req, res) {
 
   try {
     const upstream = await fetch(
-      `https://numberinfo-api-adibhai.vercel.app/api/number?number=${encodeURIComponent(number)}`
+      `https://api.sarkariallupdates.com/api?=num_info&key=30day&num=${encodeURIComponent(number)}`
     );
     const data = await upstream.json();
 
