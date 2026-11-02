@@ -11,27 +11,27 @@ export default async function handler(req, res) {
 
   if (!number) {
     return res.status(400).json({
-      status: "error",
-      message: "number parameter required",
-      developer: "@KaluaPapa",
-      youtube: "https://youtube.com/@HistoricalKalua"
+      Status: "Error",
+      Message: "Number Parameter Required",
+      Developer: "@KaluaApiAdmin",
+      Telegram: "@KaluaApiStore"
     });
   }
 
   if (!key) {
     return res.status(401).json({
-      status: "error",
-      message: "key required",
-      developer: "@KaluaPapa",
-      youtube: "https://youtube.com/@HistoricalKalua"
+      Status: "Error",
+      Message: "Key Required",
+      Developer: "@KaluaApiAdmin"
+      Telegram: "@KaluaApiStore"
     });
   }
 
   if (!key.startsWith('KALUA-')) {
     return res.status(401).json({
-      status: "error",
-      message: "invalid key",
-      developer: "@KaluaPapa"
+      Status: "Error",
+      Message: "Invalid key",
+      Developer: "@KaluaApiAdmin"
     });
   }
 
@@ -42,18 +42,18 @@ export default async function handler(req, res) {
     const data = await upstream.json();
 
     return res.status(200).json({
-      status: data.status || "success",
-      number: data.number || number,
-      data: data.data || null,
-      developer: "@KaluaPapa",
-      youtube: "https://youtube.com/@HistoricalKalua"
+      Status: Data.Status || "Success",
+      Number: Data.Number || Number,
+      Data: Data.Data || Null,
+      Developer: "@KaluaApiAdmin",
+      Telegram: "@KaluaApiStore"
     });
   } catch (err) {
     return res.status(500).json({
-      status: "error",
-      message: "upstream fetch failed",
-      developer: "@KaluaPapa",
-      youtube: "https://youtube.com/@HistoricalKalua"
+      Status: "Error",
+      Message: "Upstream fetch failed",
+      Developer: "@KaluaApiAdmin",
+      Telegram: "@KaluaApiStore"
     });
   }
 }
