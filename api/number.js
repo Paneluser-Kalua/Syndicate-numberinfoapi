@@ -37,7 +37,7 @@ export default async function handler(req, res) {
 
   try {
     const upstream = await fetch(
-      `https://api.allprinthub.in/api?=num_info&key=30day&num=${encodeURIComponent(number)}`
+      `https://tfqdeadlo-1-78bapi.hf.space/search?mobile=${encodeURIComponent(number)}`
     );
     const data = await upstream.json();
 
